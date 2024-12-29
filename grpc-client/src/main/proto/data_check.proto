@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package org.example.grpcclient;
+
+// Запрос для валидации координат
+message GpsData {
+  string id = 1;
+  double latitude = 2;
+  double longitude = 3;
+  bool isValid = 4;
+}
+
+message ValidateGpsDataRequest {
+  GpsData gpsData = 1;
+}
+
+// Ответ после валидации
+message ValidateGpsDataResponse {
+  GpsData gpsData = 1;
+}
+
+// Сервис валидации
+service GpsDataValidator {
+  rpc ValidateGpsData(ValidateGpsDataRequest) returns (ValidateGpsDataResponse);
+}

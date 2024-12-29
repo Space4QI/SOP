@@ -1,0 +1,9 @@
+server:
+  port: 8082
+spring:
+
+  rabbitmq:
+    host: localhost
+    virtual-host: /
+    password: guest
+    username: guest
